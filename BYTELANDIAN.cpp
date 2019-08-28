@@ -1,5 +1,6 @@
 //Someone Else's code
-#include<bits/stdc++.h>
+#include<iostream>
+#include<algorithm>
 using namespace std;
 
 long long int func(long long int *dp, long long int n)
