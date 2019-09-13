@@ -14,7 +14,9 @@ int main(){
     {
         cin>>h;
         cin>>w;
-        vector<vector <int> >v(h,w);
+        int** v = new int*[h];
+		for(int i = 0; i < h; ++i)
+		  v[i] = new int[w];
         for (int i = 0; i < h; i++)
         {
             for (int j = 0; j < w; j++)
@@ -25,10 +27,12 @@ int main(){
             }
             
         }
-        vector<vector<int> > dp(h,w);
+        int** dp = new int*[h];
+		for(int i = 0; i < h; ++i)
+		  dp[i] = new int[w];
         for (int i = 0; i < w; i++)
         {
-            dp[0][i]=g[0][i];
+            dp[0][i]=v[0][i];
         }
         for (int i = 1; i < h; i++)
         {
@@ -48,10 +52,10 @@ int main(){
         int answer=0;
         for (int i = 0; i < w; i++)
         {
-            answer=max(answer,dp[n-1][i]);
+            answer=max(answer,dp[h-1][i]);
         }
         
-        
+        cout<<answer<<endl;
         
 
     }
